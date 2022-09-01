@@ -2,34 +2,48 @@
 
 int main(){
     int quantidades;
-    int retas,regiao,tamanho,qntda1,qntda2,verdadeiro=0;;
-    std::string golpe;
     std:: cin >> quantidades;
     for(int i=0; i<quantidades; i++){
+        int total=0, tamanho,qntd1=0,qntd2=0,verdadeiro=0;
+        std::string golpe;
+        std::string resposta;
         std:: cin >> golpe;
-        tamanho = size(golpe);
-        for(int j=0;j<tamanho;j++){
-            if(golpe[j]=='a' && verdadeiro==0){
-                for(int k=j;k<tamanho;k++){
-                    if(golpe[j]!='a'){
-                        break;
+        tamanho = golpe.size();
+            for(int j=0;j<tamanho;j++){
+
+                if( (golpe[j] == 'a') && (verdadeiro == 0)){
+                    for(int k=j; k<tamanho; k++){
+                        if(golpe[k] != 'a'){
+                            j=k+1;
+                            verdadeiro = 1;
+                            break;
+                        }
+                        qntd1++;
                     }
-                    qntda1++;
                 }
-                verdadeiro=1;
-            }
-            if(golpe[j]=='a' && verdadeiro==1){
-                for(int k=j;k<tamanho;k++){
-                    if(golpe[j]!='a'){
-                        break;
+
+                if( (golpe[j] == 'a') && (verdadeiro==1)){
+                    for(int k=j; k<tamanho; k++){
+                        if(golpe[k] != 'a'){
+                            j=k+1;
+                            verdadeiro = 2;
+                            break;
+                        }
+                        qntd2++;
                     }
-                    qntda2++;
                 }
-                verdadeiro=1;
+
+                if(verdadeiro==2){
+                    break;
+                }
+
             }
+        total = (qntd1*qntd2);
+        std:: cout << 'k';
+        for(int j=0; j<total; j++){
+            std:: cout << 'a';
         }
-        
-        std::cout <<regiao<<std::endl;
+        std:: cout <<std::endl;
     }
     return 0;
 }
