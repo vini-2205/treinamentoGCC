@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+
+int main(){
+    int tamanho,k=0,primeiro,ultimo,num;
+    std:: string linha[4];
+    std:: cin>> linha[0];
+    tamanho = linha[0].size();
+    char aux[tamanho],resposta[tamanho-2];
+
+    for(int j=1; j<4;j++){
+        std:: cin>> linha[j];
+    }
+
+    for(int i=0;i<4;i++){
+        aux[i]=linha[i][0];
+    }
+    primeiro = atoi(aux);
+
+    for(int i=0; i<4; i++){
+        aux[i]=linha[i][tamanho-1];
+    }
+    ultimo = atoi(aux);
+    k=0;
+
+    for(int i=1; i<tamanho-1;i++){
+        for(int j=0; j<4;j++){
+            aux[j] = linha[j][i];
+        }
+        num = atoi(aux);
+        resposta[k]= ((primeiro*num + ultimo)%257);
+        k++;
+    }
+
+    for(int i=0;i<tamanho-2;i++){
+        std:: cout << resposta[i];
+    }
+
+    std:: cout<<std::endl;
+    return 0;
+}
