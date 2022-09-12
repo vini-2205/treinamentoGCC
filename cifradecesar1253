@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int quantidades;
+    cin >> quantidades;
+    for(int i=0; i<quantidades; i++){
+        string cifra;
+        int deslocamento,tamanho;
+        cin >> cifra;
+        cin >> deslocamento;
+        tamanho = cifra.size();
+        for(int j=0; j<tamanho; j++){
+            for(int k=0; k<deslocamento; k++){
+                cifra[j]--;
+                if(cifra[j]<65){
+                    cifra[j]=90;
+                }
+            }
+        }
+        cout<<cifra<<endl;
+    }
+    return 0;
+}
