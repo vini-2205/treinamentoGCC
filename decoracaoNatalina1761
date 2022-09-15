@@ -4,12 +4,12 @@
 using namespace std;
 int main(){
     cout << fixed << setprecision(2);
-    float alturaT,distancia, angulo,alturaArvore,rad;
+    double alturaT,distancia, angulo,alturaArvore,rad;
     double PI = 3.141592654;
     while(cin >>angulo >> distancia >> alturaT){
         rad = ((angulo*PI*2)/360);
         alturaArvore = (distancia*tan(rad));
-        alturaArvore = 5*(alturaArvore+alturaT);
+        alturaArvore = (5*(alturaArvore+alturaT));
         cout<<alturaArvore<<endl;
     }
     return 0;
