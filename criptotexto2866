@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void){
+    int quantidades;
+    cin >> quantidades;
+    for(int i=0; i<quantidades; i++){
+        string criptografia;
+        int tamanho,ordem=0;
+        cin>>criptografia;
+        tamanho = criptografia.size();
+        for(int j=0;j<tamanho;j++){
+            if((criptografia[j]>=97) && (criptografia[j]<=122)){
+                ordem++;
+            }
+        }
+        char letra[ordem];
+        ordem=0;
+        for(int j=0;j<tamanho;j++){
+            if((criptografia[j]>=97) && (criptografia[j]<=122)){
+                letra[ordem]=criptografia[j];
+                ordem++;
+            }
+        }
+        int retorno = (ordem-1);
+        for(int j=0; j<ordem; j++){
+            cout<<letra[retorno];
+            retorno--;
+        }
+        cout<<endl;
+    }
+}
