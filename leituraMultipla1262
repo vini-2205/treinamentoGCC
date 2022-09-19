@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void){
+    string letras;
+    int processos;
+    while(cin >> letras >> processos){
+        int quantidades,cont=0,ciclos=0;
+        quantidades = letras.size();
+        for(int i=0; i<quantidades; i++){
+            if(letras[i]=='R'){
+                int j=i;
+                for(j=i; j<(processos+i); j++){
+                    if(letras[j]=='W'){
+                        break;
+                    }
+                }
+                i=j-1;
+                ciclos++;
+            }
+            if(letras[i]=='W'){
+                cont=0;
+                ciclos++;
+            }
+        }
+        cout<<ciclos<<endl;
+    }
+}
