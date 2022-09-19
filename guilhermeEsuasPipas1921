@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+#include <cmath>
+
+using namespace std;
+int main(void){
+    long long int lados,resposta;
+    cin>>lados;
+    resposta = ((lados*(lados-3))/2);
+    cout<< resposta<<endl;
+}
