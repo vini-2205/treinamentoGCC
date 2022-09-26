@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int main(void)
+{
+    int quantidades;
+    std::cin >> quantidades;
+    string alfabeto("abcdefghijklmnopqrstuvwxyz");
+    cin.ignore();
+    for (int i = 0; i < quantidades; i++)
+    {
+        string frase;
+        int letras, vetor[26], maior = 0;
+        for (int j = 0; j < 26; j++)
+        {
+            vetor[j] = 0;
+        }
+        getline(cin, frase);
+        transform(frase.begin(), frase.end(), frase.begin(), ::tolower);
+        letras = frase.size();
+        for (int j = 0; j < letras; j++)
+        {
+            if (frase[j] >= 97 || frase[j] <= 122)
+            {
+                for (int k = 0; k < 26; k++)
+                {
+                    if (frase[j] == alfabeto[k])
+                    {
+                        vetor[k]++;
+                        if (maior < vetor[k])
+                        {
+                            maior = vetor[k];
+                        }
+                    }
+                }
+            }
+        }
+        for (int k = 0; k < 26; k++)
+        {
+            if (maior == vetor[k])
+            {
+                cout<<alfabeto[k];
+            }
+        }
+        cout<<endl;
+    }
+    return 0;
+}
